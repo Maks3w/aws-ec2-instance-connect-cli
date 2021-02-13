@@ -73,6 +73,9 @@ class EC2InstanceConnectCommand(object):
         :rtype: basestring
         """
         target = ''
+        # if instance_bundle.get('instance_id', None):
+        #     target = "{0}@{1}".format(instance_bundle['username'], instance_bundle['instance_id'])
+        # elif instance_bundle.get('host_info', None):
         if instance_bundle.get('host_info', None):
             target = "{0}@{1}".format(instance_bundle['username'], instance_bundle['host_info'])
         # file will exist only for SFTP and SCP operations.
